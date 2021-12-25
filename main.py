@@ -1,10 +1,10 @@
 import cv2
 
 # Call images
-img1 = cv2.imread('image/1.jpg', 0)
-img2 = cv2.imread('image/2.jpg', 0)
+img1 = cv2.imread('images/1.jpg', 0)
+img2 = cv2.imread('image/1.jpg', 0)
 
-orb = cv2.ORB_create()
+orb = cv2.ORB_create(1000)
 # create a landmark
 kp1, des1 = orb.detectAndCompute(img1, None)
 kp2, des2 = orb.detectAndCompute(img2, None)
@@ -25,6 +25,12 @@ print(len(good))
 
 # Genrate new image to show matches
 img3 = cv2.drawMatchesKnn(img1, kp1, img2, kp2, good, None, flags=2)
+
+# Decision
+if len(good) > 100:
+    print('Ya5le9 m chbah 40!')
+else:
+    print('Lé 3ale9a!')
 
 # Display genrated image
 cv2.imshow('img3', img3)
