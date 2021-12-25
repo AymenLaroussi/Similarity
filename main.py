@@ -1,16 +1,13 @@
-# This is a sample Python script.
+import cv2
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Call images
+img1 = cv2.imread('image/1.jpg', 0)
+img2 = cv2.imread('image/2.jpg', 0)
+
+orb = cv2.ORB_create()
+# Display images
+cv2.imshow('img1', img1)
+cv2.imshow('img2', img2)
+cv2.waitKey(0)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
